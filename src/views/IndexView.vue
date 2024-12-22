@@ -30,18 +30,24 @@
             <li class="nav-item">
               <a
                 class="nav-link text-white active"
-                href="home"
+                href="#home"
                 style="font-weight: bold"
                 >Home</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#" style="font-weight: bold"
+              <a
+                class="nav-link text-white"
+                href="#experiences"
+                style="font-weight: bold"
                 >Experiences</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#" style="font-weight: bold"
+              <a
+                class="nav-link text-white"
+                href="#tools"
+                style="font-weight: bold"
                 >Tools</a
               >
             </li>
@@ -58,7 +64,11 @@
       </div>
     </nav>
 
-    <main class="main-layout pt-5 pb-5" style="background-color: #0f0326">
+    <main
+      class="main-layout pt-5 pb-5"
+      style="background-color: #0f0326"
+      id="home"
+    >
       <div
         class="container mt-5 mb-4 w-100"
         style="background: linear-gradient(to right, #0f0326, #7e2670)"
@@ -66,11 +76,14 @@
         <div class="row">
           <div class="col-12 col-lg-7 my-auto pb-5">
             <div class="d-block d-lg-none mb-3 px-auto">
+              <!-- Lingkaran besar di kiri atas -->
+              <div class="circle small top-left"></div>
+              <!-- Lingkaran sedang di kanan atas -->
+              <div class="circle small top-right"></div>
               <img
-                src="@/assets/logo/logo_a2.png"
-                alt=""
-                width="200"
-                height="200"
+                src="@/assets/logo/aa.jpeg"
+                alt="Profile"
+                class="profile-img"
               />
             </div>
             <div class="container text-white">
@@ -134,23 +147,37 @@
               ></a>
               <a
                 href="https://github.com/anggiburox"
+                class="me-3"
                 title="Anggiburox"
                 target="_blank"
               >
                 <i class="bi bi-github fs-4 text-white"></i
               ></a>
+              <a
+                href="https://www.instagram.com/anggiburox/"
+                class="me-3"
+                title="anggiburox"
+                target="_blank"
+              >
+                <i class="bi bi-instagram fs-4 text-white"></i
+              ></a>
             </div>
           </div>
           <div class="col-12 col-md-5">
             <div class="main d-none d-md-block d-xxl-block">
-              <div class="sub-main">
-                <div class="mt-5">
-                  <img
-                    src="@/assets/logo/logo_a2.png"
-                    width="400"
-                    height="400"
-                  />
-                </div>
+              <div class="circle-container">
+                <!-- Lingkaran besar di kiri atas -->
+                <div class="circle small top-left"></div>
+                <!-- Lingkaran sedang di kanan atas -->
+                <div class="circle medium top-right"></div>
+                <!-- Lingkaran kecil di bawah -->
+                <div class="circle small bottom-right"></div>
+                <!-- Gambar profil -->
+                <img
+                  src="@/assets/logo/aa.jpeg"
+                  alt="Profile"
+                  class="profile-img"
+                />
               </div>
             </div>
           </div>
@@ -158,7 +185,7 @@
       </div>
 
       <!-- experiences -->
-      <div class="container text-light py-5">
+      <div class="container text-light py-5" id="experiences">
         <h1>Experiences</h1>
       </div>
 
@@ -303,7 +330,11 @@
       <!-- tutup -->
     </main>
 
-    <main class="main-layout pt-5 pb-5" style="background-color: #000000">
+    <main
+      class="main-layout pt-5 pb-5"
+      style="background-color: #000000"
+      id="tools"
+    >
       <!-- awal tools -->
       <div class="container py-5">
         <h1
@@ -873,6 +904,78 @@
           </div>
         </div>
         <!-- 8 -->
+        <!-- 8 -->
+        <div class="row mb-3">
+          <div class="col-6">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/trello.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">Trello</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-6">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/drawio.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">Draw.io</h5>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+        <!-- 9 -->
       </div>
 
       <!-- tutup mobile tools-->
@@ -1465,11 +1568,59 @@
             </div>
           </div>
           <!-- akhir -->
+          <!-- awal -->
+          <div class="col-md-2">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/trello.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">Trello</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- akhir -->
         </div>
       </div>
 
       <!-- akhir tools -->
     </main>
+
+    <!-- footer -->
+    <footer
+      class="text-center p-3"
+      style="background-color: #0f0326; color: white"
+    >
+      <p>
+        Copyright &copy; {{ new Date().getFullYear() }} | Made with
+        <i class="bi bi-heart-fill" style="color: red"></i> by Anggi Dwi
+        Sumiyadi
+      </p>
+    </footer>
 
     <!-- tutup -->
   </div>
@@ -1506,6 +1657,104 @@ button.carousel-control-next {
   margin-right: 15%;
   margin-bottom: -50px;
   margin-left: 15%;
+}
+
+.circle-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Agar lingkaran yang keluar tetap rapi */
+}
+
+/*  */
+/* Container lingkaran */
+.circle-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Agar lingkaran tetap dalam area */
+}
+
+/* Lingkaran */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(162, 95, 228, 0.5),
+    rgba(115, 44, 232, 0.2)
+  );
+  animation: move 10s infinite ease-in-out;
+}
+
+/* Ukuran lingkaran */
+.circle.large {
+  width: 450px;
+  height: 450px;
+  animation-delay: 0s; /* Mulai langsung */
+}
+
+.circle.medium {
+  width: 300px;
+  height: 300px;
+  animation-delay: 2s; /* Mulai setelah 2 detik */
+}
+
+.circle.small {
+  width: 200px;
+  height: 200px;
+  animation-delay: 4s; /* Mulai setelah 4 detik */
+}
+
+/* Posisi awal lingkaran */
+.circle.top-left {
+  top: 50px;
+  left: 20px;
+}
+
+.circle.top-right {
+  top: -80px;
+  right: -70px;
+}
+
+.circle.bottom-right {
+  bottom: -60px;
+  right: -120px;
+}
+
+/* Gambar profil */
+.profile-img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  position: relative;
+  z-index: 10; /* Agar gambar tetap di atas lingkaran */
+}
+
+/* Animasi gerakan lingkaran */
+@keyframes move {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(30px, -20px);
+  }
+  50% {
+    transform: translate(-20px, 30px);
+  }
+  75% {
+    transform: translate(-30px, -30px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 </style>
 <!-- <script>

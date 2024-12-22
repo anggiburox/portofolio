@@ -64,7 +64,7 @@
         style="background: linear-gradient(to right, #0f0326, #7e2670)"
       >
         <div class="row">
-          <div class="col-12 col-lg-7 my-auto">
+          <div class="col-12 col-lg-7 my-auto pb-5">
             <div class="d-block d-lg-none mb-3 px-auto">
               <img
                 src="@/assets/logo/logo_a2.png"
@@ -170,79 +170,48 @@
           data-bs-ride="carousel"
           data-bs-interval="3000"
         >
+          <!-- Carousel Indicators -->
           <div class="carousel-indicators">
             <button
+              v-for="(chunk, index) in chunkedExperiencesmobile"
+              :key="'indicator-' + index"
               type="button"
-              data-bs-target="#carouselExampleIndicatorsmobile"
-              data-bs-slide-to="0"
-              class="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicatorsmobile"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicatorsmobile"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
+              :data-bs-target="'#carouselExampleIndicatorsmobile'"
+              :data-bs-slide-to="index"
+              :class="{ active: index === 0 }"
+              :aria-label="'Slide ' + (index + 1)"
             ></button>
           </div>
+
+          <!-- Carousel Items -->
           <div class="carousel-inner container">
-            <div class="carousel-item active">
-              <div class="col-md-4">
-                <div class="card h-100 rounded-custom">
-                  <img
-                    src="@/assets/logo/logo_a2.png"
-                    alt=""
-                    class="card-img-top"
-                  />
-                  <div class="card-body text-dark">
-                    <h5 class="card-title">Inventory - 2019</h5>
-                    <p class="card-text">
-                      Inventory System merupakan aplikasi sederhana untuk UJIKOM
-                      di SMK Bakti Nusantara 666. Aplikasi ini dibuat dengan
-                      menggunakan PHP, Bootstrap, dan MySQL.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="col-md-4">
-                <div class="card h-100 rounded-custom">
-                  <img
-                    src="@/assets/logo/logo_a2.png"
-                    alt=""
-                    class="card-img-top"
-                  />
-                  <div class="card-body text-dark">
-                    <h5 class="card-title">Kaula - 2019</h5>
-                    <p class="card-text">
-                      Kaula merupakan website e-commerce menggunakan CMS
-                      WordPress.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="col-md-4">
-                <div class="card h-100 rounded-custom">
-                  <img
-                    src="@/assets/logo/logo_a2.png"
-                    alt=""
-                    class="card-img-top"
-                  />
-                  <div class="card-body text-dark">
-                    <h5 class="card-title">Card 9</h5>
-                    <p class="card-text">
-                      Expedita accusantium ratione beatae minus porro.
-                    </p>
+            <!-- Loop through experiences and group them into rows of 3 -->
+            <div
+              v-for="(chunk, chunkIndex) in chunkedExperiencesmobile"
+              :key="chunkIndex"
+              class="carousel-item"
+              :class="{ active: chunkIndex === 0 }"
+            >
+              <div class="row">
+                <!-- Loop through each chunk of 3 experiences -->
+                <div
+                  v-for="(experience, index) in chunk"
+                  :key="experience.id"
+                  class="col-md-4"
+                >
+                  <div class="card h-100 rounded-custom">
+                    <img
+                      :src="'http://127.0.0.1:8000/storage/' + experience.foto"
+                      alt="Experience Image"
+                      class="card-img-top"
+                    />
+
+                    <div class="card-body text-dark">
+                      <h5 class="card-title">{{ experience.title }}</h5>
+                      <p class="card-text text-justify">
+                        {{ experience.description }}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -332,6 +301,1174 @@
       <!-- tutup experiences -->
 
       <!-- tutup -->
+    </main>
+
+    <main class="main-layout pt-5 pb-5" style="background-color: #000000">
+      <!-- awal tools -->
+      <div class="container py-5">
+        <h1
+          style="
+            background: linear-gradient(
+              to right,
+              #bf44c8 1%,
+              #bf44c8 0%,
+              #85d9f3 10%,
+              #85d9f3 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          "
+        >
+          Tools
+        </h1>
+      </div>
+
+      <!-- tampilan mobile tools menggunakan d-block d-lg-none mb-3 px-auto -->
+      <div class="d-block d-lg-none mb-3 px-auto container">
+        <!-- 1 -->
+        <div class="row mb-3">
+          <div class="col-6">
+            <div
+              class="card h-100 rounded-custom"
+              style="box-shadow: 5px 5px 15px #85d9f3, 5px 5px 50px #bf44c8"
+            >
+              <div class="card-body text-dark">
+                <div class="d-flex align-items-center justify-content-center">
+                  <img
+                    src="@/assets/logo/vscode.png"
+                    alt=""
+                    width="30"
+                    height="30"
+                  />
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                  <h6 class="card-title text-center">VS Code</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div
+              class="card h-100 rounded-custom"
+              style="box-shadow: 5px 5px 15px #85d9f3, 5px 5px 50px #bf44c8"
+            >
+              <div class="card-body text-dark">
+                <div class="d-flex align-items-center justify-content-center">
+                  <img
+                    src="@/assets/logo/xampp.png"
+                    alt=""
+                    width="30"
+                    height="30"
+                  />
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                  <h6 class="card-title text-center">XAMPP</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 1 -->
+        <!-- 2 -->
+        <div class="row mb-3">
+          <div class="col-6">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/github.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">Github</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/gitlab.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">Gitlab</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 2 -->
+        <!-- 3 -->
+        <div class="row mb-3">
+          <div class="col-6">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/php.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">PHP</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/laravel.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">Laravel</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 3 -->
+        <!-- 4 -->
+        <div class="row mb-3">
+          <div class="col-6">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/ci.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">CodeIgniter</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/mysql.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">MySQL</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 4 -->
+        <!-- 5 -->
+        <div class="row mb-3">
+          <div class="col-6">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/wordpress.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">WordPress</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/html.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">HTML</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 5 -->
+        <!-- 6 -->
+        <div class="row mb-3">
+          <div class="col-6">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/css.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">CSS</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/bs.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">Bootstrap</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 6 -->
+        <!-- 7 -->
+        <div class="row mb-3">
+          <div class="col-6">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/figma.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">Figma</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/edge.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">Edge</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 7 -->
+        <!-- 8 -->
+        <div class="row mb-3">
+          <div class="col-6">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/vue.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">Vue</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/drawio.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">Draw.io</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 8 -->
+      </div>
+
+      <!-- tutup mobile tools-->
+
+      <!-- tampilan desktop gunakan  main d-none d-md-block d-xxl-block-->
+      <div class="container main d-none d-md-block d-xxl-block">
+        <div class="row mb-5">
+          <!-- awal -->
+          <div class="col-md-2">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/vscode.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">VS Code</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- akhir -->
+          <!-- awal -->
+          <div class="col-md-2">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/xampp.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">XAMPP</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- akhir -->
+          <!-- awal -->
+          <div class="col-md-2">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/github.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">Github</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- akhir -->
+
+          <!-- awal -->
+          <div class="col-md-2">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/gitlab.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">Gitlab</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- akhir -->
+          <!-- awal -->
+          <div class="col-md-2">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/php.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">PHP</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- akhir -->
+
+          <!-- awal -->
+          <div class="col-md-2">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/laravel.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">Laravel</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- akhir -->
+        </div>
+        <div class="row mb-5">
+          <!-- awal -->
+          <div class="col-md-2">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/ci.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">CodeIgniter</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- akhir -->
+          <!-- awal -->
+          <div class="col-md-2">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/mysql.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">MySQL</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- akhir -->
+          <!-- awal -->
+          <div class="col-md-2">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/wordpress.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">WordPress</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- akhir -->
+          <!-- awal -->
+          <div class="col-md-2">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/html.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">HTML</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- akhir -->
+          <!-- awal -->
+          <div class="col-md-2">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/css.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">CSS</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- akhir -->
+          <!-- awal -->
+          <div class="col-md-2">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/bs.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">Bootstrap</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- akhir -->
+        </div>
+        <div class="row mb-5">
+          <!-- awal -->
+          <div class="col-md-2">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/figma.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">Figma</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- akhir -->
+
+          <!-- awal -->
+          <div class="col-md-2">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/edge.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">Edge</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- akhir -->
+
+          <!-- awal -->
+          <div class="col-md-2">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/vue.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">Vue</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- akhir -->
+
+          <!-- awal -->
+          <div class="col-md-2">
+            <div
+              class="card h-10 rounded-custom"
+              style="
+                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
+              "
+            >
+              <div class="card-body text-dark">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="@/assets/logo/drawio.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <h5 class="card-title">Draw.io</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- akhir -->
+        </div>
+      </div>
+
+      <!-- akhir tools -->
     </main>
 
     <!-- tutup -->
@@ -440,6 +1577,13 @@ export default {
       let result = [];
       for (let i = 0; i < this.experiences.length; i += 3) {
         result.push(this.experiences.slice(i, i + 3));
+      }
+      return result;
+    },
+    chunkedExperiencesmobile() {
+      let result = [];
+      for (let i = 0; i < this.experiences.length; i += 1) {
+        result.push(this.experiences.slice(i, i + 1));
       }
       return result;
     },

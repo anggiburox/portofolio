@@ -32,7 +32,7 @@
                 class="nav-link text-white active"
                 href="home"
                 style="font-weight: bold"
-                >Homee</a
+                >Home</a
               >
             </li>
             <li class="nav-item">
@@ -297,7 +297,9 @@
 
                   <div class="card-body text-dark">
                     <h5 class="card-title">{{ experience.title }}</h5>
-                    <p class="card-text">{{ experience.description }}</p>
+                    <p class="card-text text-justify">
+                      {{ experience.description }}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -341,11 +343,19 @@
   /* color: #130428 !important; */
 }
 button.carousel-control-prev {
-  margin-left: -50px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
 }
 
 button.carousel-control-next {
-  margin-right: -50px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
 }
 .carousel-indicators {
   position: absolute;
@@ -361,17 +371,9 @@ button.carousel-control-next {
   margin-left: 15%;
 }
 </style>
-<script>
+<!-- <script>
 import axios from "axios";
-let roles = ["Programmer", "UI/UX", "Analyst System"];
-let roleIndex = 0;
-setInterval(
-  () => {
-    document.querySelector(".text-capitalize").textContent = roles[roleIndex];
-    roleIndex = (roleIndex + 1) % roles.length;
-  },
-  roleIndex === roles.length - 1 ? 1800 : 1100
-);
+
 export default {
   data() {
     return {
@@ -409,6 +411,77 @@ export default {
       .catch((error) => {
         console.error("There was an error!", error);
       });
+  },
+};
+let roles = ["Programmer", "UI/UX", "Analyst System"];
+let roleIndex = 0;
+setInterval(
+  () => {
+    document.querySelector(".text-capitalize").textContent = roles[roleIndex];
+    roleIndex = (roleIndex + 1) % roles.length;
+  },
+  roleIndex === roles.length - 1 ? 1800 : 1100
+);
+</script> -->
+
+<script>
+import axios from "axios";
+
+export default {
+  data() {
+    return {
+      experiences: [],
+      role: "",
+    };
+  },
+  computed: {
+    // Membagi pengalaman menjadi chunk per 3 item
+    chunkedExperiences() {
+      let result = [];
+      for (let i = 0; i < this.experiences.length; i += 3) {
+        result.push(this.experiences.slice(i, i + 3));
+      }
+      return result;
+    },
+  },
+  methods: {
+    // Fungsi untuk mendapatkan URL gambar yang benar
+    getImageUrl(foto) {
+      // Periksa apakah path foto ada, jika ada, kembalikan URL yang benar
+      return foto
+        ? `/storage/${foto}` // Menggunakan foto langsung tanpa 'assets/foto' tambahan
+        : "/path/to/default-image.jpg"; // Menampilkan gambar default jika tidak ada
+    },
+  },
+
+  mounted() {
+    // Fetching data from the API
+    axios
+      .get("http://127.0.0.1:8000/api/experiences")
+      .then((response) => {
+        this.experiences = response.data.data;
+        console.log(this.experiences); // Log the data to verify it's correctly fetched
+      })
+      .catch((error) => {
+        console.error("There was an error!", error);
+      });
+
+    // Ensure the element exists before using setInterval
+    const roles = ["Programmer", "UI/UX", "Analyst System"];
+    let roleIndex = 0;
+    const roleElement = document.querySelector(".text-capitalize");
+
+    if (roleElement) {
+      setInterval(
+        () => {
+          roleElement.textContent = roles[roleIndex];
+          roleIndex = (roleIndex + 1) % roles.length;
+        },
+        roleIndex === roles.length - 1 ? 1800 : 1100
+      );
+    } else {
+      console.error('Element with class "text-capitalize" not found.');
+    }
   },
 };
 </script>

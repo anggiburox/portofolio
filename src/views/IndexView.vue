@@ -32,7 +32,7 @@
                 class="nav-link text-white active"
                 href="home"
                 style="font-weight: bold"
-                >Home</a
+                >Homee</a
               >
             </li>
             <li class="nav-item">

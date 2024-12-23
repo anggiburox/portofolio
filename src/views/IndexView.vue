@@ -1847,7 +1847,7 @@ export default {
     getImageUrl(foto) {
       // Periksa apakah path foto ada, jika ada, kembalikan URL yang benar
       return foto
-        ? `/${foto}` // Menggunakan foto langsung tanpa 'assets/foto' tambahan
+        ? `/` // Menggunakan foto langsung tanpa 'assets/foto' tambahan
         : // ? `/storage/${foto}` // Menggunakan foto langsung tanpa 'assets/foto' tambahan
           "/path/to/default-image.jpg"; // Menampilkan gambar default jika tidak ada
     },

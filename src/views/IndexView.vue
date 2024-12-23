@@ -40,7 +40,7 @@
                 class="nav-link text-white"
                 href="#experiences"
                 style="font-weight: bold"
-                >Experiencess</a
+                >Experiences</a
               >
             </li>
             <li class="nav-item">

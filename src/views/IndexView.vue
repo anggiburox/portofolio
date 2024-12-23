@@ -1850,14 +1850,24 @@ export default {
   mounted() {
     // Fetching data from the API
     axios
-      .get("http://127.0.0.1:8000/api/experiences")
+      .get("https://anggiburox.github.io/tes-pro/experiences.json")
       .then((response) => {
-        this.experiences = response.data.data;
-        console.log(this.experiences); // Log the data to verify it's correctly fetched
+        this.experiences = response.data;
+        console.log(this.experiences); // Verifikasi data di konsol
       })
       .catch((error) => {
-        console.error("There was an error!", error);
+        console.error("Gagal mengambil data!", error);
       });
+
+    // axios
+    //   .get("http://127.0.0.1:8000/api/experiences")
+    //   .then((response) => {
+    //     this.experiences = response.data.data;
+    //     console.log(this.experiences); // Log the data to verify it's correctly fetched
+    //   })
+    //   .catch((error) => {
+    //     console.error("There was an error!", error);
+    //   });
 
     // Ensure the element exists before using setInterval
     const roles = ["Programmer", "UI/UX", "Analyst System"];

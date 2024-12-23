@@ -229,7 +229,7 @@
                   <div class="card h-100 rounded-custom">
                     <img
                       :src="
-                        'https://anggiburox.github.io/tes-pro/' +
+                        'https://anggiburox.github.io/tes-pro/assets/' +
                         experience.foto
                       "
                       alt="Experience Image"
@@ -289,9 +289,7 @@
               >
                 <div class="card h-100 rounded-custom">
                   <img
-                    :src="
-                      'https://anggiburox.github.io/tes-pro/' + experience.foto
-                    "
+                    :src="'http://127.0.0.1:8000/storage/' + experience.foto"
                     alt="Experience Image"
                     class="card-img-top"
                   />
@@ -1847,9 +1845,8 @@ export default {
     getImageUrl(foto) {
       // Periksa apakah path foto ada, jika ada, kembalikan URL yang benar
       return foto
-        ? `/${foto}` // Menggunakan foto langsung tanpa 'assets/foto' tambahan
-        : // ? `/storage/${foto}` // Menggunakan foto langsung tanpa 'assets/foto' tambahan
-          "/path/to/default-image.jpg"; // Menampilkan gambar default jika tidak ada
+        ? `/storage/${foto}` // Menggunakan foto langsung tanpa 'assets/foto' tambahan
+        : "/path/to/default-image.jpg"; // Menampilkan gambar default jika tidak ada
     },
   },
 

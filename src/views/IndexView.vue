@@ -228,10 +228,18 @@
                 >
                   <div class="card h-100 rounded-custom">
                     <img
-                      :src="'http://127.0.0.1:8000/storage/' + experience.foto"
+                      :src="
+                        'https://anggiburox.github.io/tes-pro/assets/foto/' +
+                        experience.foto
+                      "
                       alt="Experience Image"
                       class="card-img-top"
                     />
+                    <!-- <img
+                      :src="'http://127.0.0.1:8000/storage/' + experience.foto"
+                      alt="Experience Image"
+                      class="card-img-top"
+                    /> -->
 
                     <div class="card-body text-dark">
                       <h5 class="card-title">{{ experience.title }}</h5>

@@ -229,7 +229,7 @@
                   <div class="card h-100 rounded-custom">
                     <img
                       :src="
-                        'https://anggiburox.github.io/tes-pro/assets/foto/' +
+                        'https://anggiburox.github.io/tes-pro/assets/' +
                         experience.foto
                       "
                       alt="Experience Image"

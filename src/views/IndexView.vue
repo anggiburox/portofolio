@@ -17,6 +17,7 @@
         Sumiyadi
       </p>
     </footer>
+    <!-- footer -->
   </div>
 </template>
 

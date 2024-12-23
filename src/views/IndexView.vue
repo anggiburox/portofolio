@@ -235,7 +235,7 @@
                       alt="Experience Image"
                       class="card-img-top"
                     />
-                    <!-- <img
+                    <!-- <img 
                       :src="'http://127.0.0.1:8000/storage/' + experience.foto"
                       alt="Experience Image"
                       class="card-img-top"

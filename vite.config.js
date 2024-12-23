@@ -7,7 +7,7 @@ import vueDevTools from "vite-plugin-vue-devtools";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/tes-pro/", // Ganti sesuai nama repository GitHub Anda
+  base: "/portofolio/", // Ganti sesuai nama repository GitHub Anda
   plugins: [vue(), vueJsx(), vueDevTools()],
   resolve: {
     alias: {

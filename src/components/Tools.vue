@@ -569,40 +569,38 @@
             </div>
           </div>
         </div>
-        <!-- <div class="col-6">
-            <div
-              class="card h-10 rounded-custom"
-              style="
-                box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8;
-              "
-            >
-              <div class="card-body text-dark">
-                <div
-                  style="
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                  "
-                >
-                  <img
-                    src="@/assets/logo/drawio.png"
-                    alt=""
-                    width="50"
-                    height="50"
-                  />
-                </div>
-                <div
-                  style="
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                  "
-                >
-                  <h5 class="card-title">Draw.io</h5>
-                </div>
+        <div class="col-6">
+          <div
+            class="card h-10 rounded-custom"
+            style="box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8"
+          >
+            <div class="card-body text-dark">
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+                <img
+                  src="@/assets/logo/sdlc.png"
+                  alt=""
+                  width="140"
+                  height="50"
+                />
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+                <h5 class="card-title">SDLC</h5>
               </div>
             </div>
-          </div> -->
+          </div>
+        </div>
       </div>
       <!-- 9 -->
     </div>
@@ -1184,6 +1182,40 @@
                 "
               >
                 <h5 class="card-title">Trello</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- akhir -->
+        <!-- awal -->
+        <div class="col-md-2">
+          <div
+            class="card h-10 rounded-custom"
+            style="box-shadow: 10px 10px 20px #85d9f3, 10px 10px 100px #bf44c8"
+          >
+            <div class="card-body text-dark">
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+                <img
+                  src="@/assets/logo/sdlc.png"
+                  alt=""
+                  width="140"
+                  height="50"
+                />
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+                <h5 class="card-title">SDLC</h5>
               </div>
             </div>
           </div>

@@ -123,6 +123,12 @@
             data-bs-slide-to="16"
             aria-label="Slide 17"
           ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicatorsmobile"
+            data-bs-slide-to="17"
+            aria-label="Slide 18"
+          ></button>
         </div>
 
         <!-- Carousel Items -->
@@ -393,6 +399,24 @@
               </div>
             </div>
           </div>
+
+          <div class="carousel-item">
+            <div class="col-md-4">
+              <div class="card h-100 rounded-custom">
+                <img src="@/assets/foto/inventory.png" class="card-img-top" />
+                <div class="card-body text-dark">
+                  <h5 class="card-title">System Inventory - 2024</h5>
+                  <p class="card-text text-justify">
+                    Sistem inventory yang merupakan aplikasi sederhana yang
+                    bertujuan untuk memudahkan pengelolaan dan pencatatan
+                    barang.Teknologi yang digunakan adalah Laravel, MySQL,
+                    BootStrap, GitHub, Vue, Vuex, PostMan.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- tutup -->
         </div>
       </div>
     </div>
@@ -700,8 +724,23 @@
                 </div>
               </div>
             </div>
+            <div class="col-md-4">
+              <div class="card h-100 rounded-custom">
+                <img src="@/assets/foto/inventory.png" class="card-img-top" />
+                <div class="card-body text-dark">
+                  <h5 class="card-title">System Inventory - 2024</h5>
+                  <p class="card-text text-justify">
+                    Sistem inventory yang merupakan aplikasi sederhana yang
+                    bertujuan untuk memudahkan pengelolaan dan pencatatan
+                    barang.Teknologi yang digunakan adalah Laravel, MySQL,
+                    BootStrap, GitHub, Vue, Vuex, PostMan.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+        <!-- tutup carousel item -->
       </div>
 
       <!-- Carousel Controls -->

@@ -129,6 +129,12 @@
             data-bs-slide-to="17"
             aria-label="Slide 18"
           ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicatorsmobile"
+            data-bs-slide-to="18"
+            aria-label="Slide 19"
+          ></button>
         </div>
 
         <!-- Carousel Items -->
@@ -416,6 +422,23 @@
               </div>
             </div>
           </div>
+
+          <div class="carousel-item">
+            <div class="col-md-4">
+              <div class="card h-100 rounded-custom">
+                <img src="@/assets/foto/aliyahaven.png" class="card-img-top" />
+                <div class="card-body text-dark">
+                  <h5 class="card-title">Ecommerce - 2025</h5>
+                  <p class="card-text text-justify">
+                    Aliya Haven Store merupakan aplikasi ecommerce menggunakan
+                    teknologi PHP Laravel versi 11 FilamentPhp, Livewire,
+                    TailwindCss, dan sudah terintegrasi dengan payment gateway
+                    Xendit.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- tutup -->
         </div>
       </div>
@@ -468,6 +491,12 @@
           data-bs-target="#carouselExampleIndicators"
           data-bs-slide-to="5"
           aria-label="Slide 6"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="6"
+          aria-label="Slide 7"
         ></button>
       </div>
 
@@ -738,6 +767,51 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card h-100 rounded-custom">
+                <img src="@/assets/foto/aliyahaven.png" class="card-img-top" />
+                <div class="card-body text-dark">
+                  <h5 class="card-title">Ecommerce - 2025</h5>
+                  <p class="card-text text-justify">
+                    Aliya Haven Store merupakan aplikasi ecommerce menggunakan
+                    teknologi PHP Laravel versi 11 FilamentPhp, Livewire,
+                    TailwindCss, dan sudah terintegrasi dengan payment gateway
+                    Xendit.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-md-4">
+              <div class="card h-100 rounded-custom">
+                <img src="@/assets/foto/transaksi.jpg" class="card-img-top" />
+                <div class="card-body text-dark">
+                  <h5 class="card-title">Transaksi Harian Outlet - 2023</h5>
+                  <p class="card-text text-justify">
+                    Transaksi Harian Outlet merupakan aplikasi pendataan laporan
+                    harian setiap outlet. Teknologi yang digunakan adalah
+                    Laravel, Bootstrap, dan MySQL.
+                  </p>
+                </div>
+              </div>
+            </div> -->
+            <!-- <div class="col-md-4">
+              <div class="card h-100 rounded-custom">
+                <img src="@/assets/foto/inventory.png" class="card-img-top" />
+                <div class="card-body text-dark">
+                  <h5 class="card-title">System Inventory - 2024</h5>
+                  <p class="card-text text-justify">
+                    Sistem inventory yang merupakan aplikasi sederhana yang
+                    bertujuan untuk memudahkan pengelolaan dan pencatatan
+                    barang.Teknologi yang digunakan adalah Laravel, MySQL,
+                    BootStrap, GitHub, Vue, Vuex, PostMan.
+                  </p>
+                </div>
+              </div>
+            </div> -->
           </div>
         </div>
         <!-- tutup carousel item -->

@@ -33,9 +33,9 @@
           <li>
             <a class="nav-link" href="#tools">Tools</a>
           </li>
-          <li>
+          <!-- <li>
             <a class="nav-link" href="#">Dev Notes</a>
-          </li>
+          </li> -->
         </ul>
         <ContactButton />
       </div>
@@ -111,11 +111,11 @@
               >Tools</a
             >
           </li>
-          <li>
+          <!-- <li>
             <a class="mobile-nav-link" href="#" @click="closeMobileMenu"
               >Dev Notes</a
             >
-          </li>
+          </li> -->
         </ul>
         <div class="mobile-contact-btn">
           <ContactButton />

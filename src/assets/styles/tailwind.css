@@ -1,0 +1,358 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles - tambahkan di root CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden !important;
+  width: 100%;
+  position: relative;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar .container > div {
+    @apply flex-col gap-4;
+  }
+
+  .menu-list {
+    @apply flex-col items-center w-full gap-4;
+  }
+
+  .nav-link {
+    @apply text-center block;
+  }
+
+  .btn-contact {
+    @apply w-full justify-center;
+  }
+}
+
+/* navbar */
+
+/* Navbar Container - Awalnya transparan */
+.navbar {
+  background-color: transparent;
+  transition: all 0.5s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  backdrop-filter: blur(0px);
+}
+
+/* Navbar saat di-hover */
+.navbar-hover {
+  background-color: white;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Navbar saat di-scroll */
+.navbar-scrolled {
+  background-color: white;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Menu List */
+.menu-list {
+  @apply flex gap-8 m-0 p-0;
+}
+
+.menu-list li {
+  @apply list-none;
+}
+
+/* Navbar Link Styling */
+.nav-link {
+  font-weight: 700;
+  color: black;
+  position: relative;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Saat navbar transparan, teks berwarna gelap */
+.navbar:not(.navbar-hover):not(.navbar-scrolled) .nav-link {
+  color: black;
+}
+
+/* Saat navbar berwarna, teks berwarna putih */
+.navbar-hover .nav-link,
+.navbar-scrolled .nav-link {
+  color: black;
+}
+
+/* Animated underline - warna menyesuaikan */
+.nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2.5px;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Warna underline saat navbar transparan */
+.navbar:not(.navbar-hover):not(.navbar-scrolled) .nav-link::before {
+  background: #111439;
+}
+
+/* Warna underline saat navbar berwarna */
+.navbar-hover .nav-link::before,
+.navbar-scrolled .nav-link::before {
+  background: linear-gradient(
+    135deg,
+    #9b72fa 0%,
+    #e08cce 40%,
+    #fac995 100% /* #ffffff 100% */
+  );
+}
+
+/* Hover effect dengan gradasi */
+.nav-link:hover {
+  background: linear-gradient(
+    135deg,
+    #9b72fa 0%,
+    #e08cce 40%,
+    #fac995 100% /* #ffffff 100% */
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transform: translateY(-2px);
+}
+
+.nav-link:hover::before {
+  width: 80%;
+}
+
+/* Active effect */
+.nav-link:active {
+  transform: translateY(0);
+}
+
+/* akhir navbar */
+
+/* contact */
+
+/* Contact Button Styling */
+.btn-contact {
+  background: black;
+  border: 2px solid black;
+  padding: 8px 24px;
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Saat navbar berwarna, button berubah warna */
+.navbar-hover .btn-contact,
+.navbar-scrolled .btn-contact {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+.btn-contact i,
+.btn-contact svg {
+  transition: transform 0.3s ease;
+}
+
+.btn-contact:hover {
+  /* background: #ffffff; */
+  /* color: white; */
+  background: linear-gradient(
+    135deg,
+    #9b72fa 0%,
+    #e08cce 40%,
+    #fac995 100% /* #ffffff 100% */
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transform: translateY(-2px);
+  border: 2px solid #e3e3e3;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.navbar-hover .btn-contact:hover,
+.navbar-scrolled .btn-contact:hover {
+  /* background: linear-gradient(90deg, #00abe4, red); */
+  background-color: black;
+}
+
+.btn-contact:hover i,
+.btn-contact:hover svg {
+  transform: translateX(4px);
+}
+
+.btn-contact:active {
+  transform: translateY(1px);
+}
+
+/* contact */
+
+/* home */
+/* Custom gradient background untuk hero container */
+.hero-container {
+  background: linear-gradient(
+    135deg,
+    #9b72fa 0%,
+    #e08cce 40%,
+    #fac995 100% /* #ffffff 100% */
+  );
+  /* border-radius: 60px; */
+  /* padding: 60px 40px !important; */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Radial gradient untuk lingkaran */
+.bg-gradient-radial {
+  background: radial-gradient(
+    circle,
+    rgba(155, 114, 250, 0.4),
+    rgba(224, 204, 255, 0.1)
+  );
+}
+
+/* Animasi float untuk lingkaran */
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(15px, -15px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.animate-float {
+  animation: float 8s infinite ease-in-out;
+}
+
+.animate-float-delayed {
+  animation: float 8s infinite ease-in-out 1.5s;
+}
+
+.animate-float-more-delayed {
+  animation: float 8s infinite ease-in-out 3s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .hero-container {
+    padding: 40px 30px !important;
+    border-radius: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 30px 20px !important;
+    border-radius: 30px;
+  }
+}
+/* akhir home */
+
+/* core values */
+/* Glass morphism effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  background: rgba(0, 0, 0, 0.5);
+  border-color: rgba(133, 217, 243, 0.5);
+  box-shadow:
+    0 8px 25px rgba(133, 217, 243, 0.2),
+    0 0 20px rgba(133, 217, 243, 0.3);
+}
+
+.custom-gradient {
+  background: linear-gradient(135deg, #9b72fa 0%, #e08cce 40%, #fac995 100%);
+}
+
+/* Animasi pulse/denyut dengan glow */
+@keyframes pulseGlow {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(155, 114, 250, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(155, 114, 250, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(155, 114, 250, 0);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.animate-pulse-glow:hover {
+  animation: none;
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px rgba(155, 114, 250, 0.4);
+}
+
+/* core values */
+
+/* tools */
+
+@keyframes gradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Animasi gradient untuk title */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% auto;
+  animation: gradient 3s ease infinite;
+}
+/* akhir tools */

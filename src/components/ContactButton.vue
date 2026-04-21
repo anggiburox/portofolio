@@ -1,19 +1,12 @@
 <template>
-  <button class="btn btn-outline-dark" type="submit" @click="contact">
-    <i class="fs-5 bi-envelope"></i> Contact
+  <button class="btn-contact" type="submit" @click="contact">
+    <span class="material-symbols-outlined"> mail </span>
+    <span>Collabs</span>
   </button>
 </template>
 
-<script>
-export default {
-  methods: {
-    contact() {
-      window.location.href = "mailto:anggiburox@gmail.com";
-    },
-  },
+<script setup>
+const contact = () => {
+  window.location.href = "mailto:anggiburox@gmail.com";
 };
 </script>
-
-<style scoped>
-/* Tambahkan gaya khusus untuk tombol kontak jika perlu */
-</style>

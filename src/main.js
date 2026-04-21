@@ -1,6 +1,4 @@
-//non aktif agar tampilan tidak ditengah
-// import "./assets/main.css";
-
+import "./assets/styles/tailwind.css";
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
